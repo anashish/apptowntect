@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="tech.town.app.com.apptowntech.ui.AccountActivity">
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_margin="15dp"
+       android:layout_height="wrap_content">
+
+       <ImageView
+           android:layout_width="wrap_content"
+           android:src="@drawable/close"
+           android:layout_height="wrap_content"
+           android:id="@+id/imageView6" />
+
+       <ImageView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/imageView7"
+           android:layout_alignParentEnd="true"
+           android:src="@drawable/send"
+            />
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textAppearance="?android:attr/textAppearanceSmall"
+           android:text="@string/comment"
+           android:textSize="18dp"
+           android:textColor="@color/black"
+
+           android:layout_centerVertical="true"
+           android:layout_centerHorizontal="true" />
+   </RelativeLayout>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:maxLength="500"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:textSize="15dp"
+        android:hint="@string/comment"
+        android:maxLines="10"
+        android:background="@drawable/edit_text_border"
+        android:minHeight="125dp"
+        android:layout_margin="10dp"
+        android:id="@+id/editText_report_comment"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:textSize="14dp"
+        android:text="500"
+        android:gravity="end"
+        android:layout_margin="10dp"
+        android:id="@+id/textView_counter"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical" />
+
+</LinearLayout>

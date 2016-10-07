@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+android:background="@color/white"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="55dp"
+        android:src="@drawable/placeholder"
+        android:layout_height="55dp"
+        android:layout_margin="5dp"
+        android:id="@+id/profile_icon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/textView_name"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:textSize="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/profile_icon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="4dp"
+        android:textSize="12dp"
+        android:id="@+id/textView_desc"
+        android:layout_below="@+id/textView_name"
+        android:layout_toEndOf="@+id/profile_icon" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/profile_icon"
+        android:background="@color/gray"
+        ></View>
+
+</RelativeLayout>
