@@ -135,13 +135,16 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             Account currentItem = getItem(position - 1);
             VHItem VHitem = (VHItem) holder;
 
-            if(position==4){
+            if(position==4 ||position==5){
                 VHitem.arrow.setVisibility(View.GONE);
                 VHitem.aSwitch.setVisibility(View.VISIBLE);
             }else{
                 VHitem.aSwitch.setVisibility(View.GONE);
                 VHitem.arrow.setVisibility(View.VISIBLE);
             }
+
+
+
             if(appPref.getDataSaveMode(mContext)){
                 VHitem.aSwitch.setChecked(true);
             }else{
