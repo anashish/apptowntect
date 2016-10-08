@@ -184,9 +184,14 @@ public class CommonFragment extends Fragment implements HomeCategoryList.OnAddFa
         mProgressDialog.show();
     }
 
+
     @Override
     public void getBookMarkList(List<Favourite> favouriteList) {
 
+    }
+    @Override
+    public Context getContext() {
+        return getActivity();
     }
 
 
