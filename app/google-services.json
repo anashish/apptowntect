@@ -1,0 +1,94 @@
+{
+  "project_info": {
+    "project_number": "995849481719",
+    "project_id": "livetoday-4d1ad"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:995849481719:android:668f52b53fb178dc",
+        "android_client_info": {
+          "package_name": "online.livetoday.livetoday"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "995849481719-taa4c23n18navo8j51lf9e8qmtosj234.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "online.livetoday.livetoday",
+            "certificate_hash": "B2C5BC50CA1CD998F9C531FB0678B0A0BD747357"
+          }
+        },
+        {
+          "client_id": "995849481719-6piv8q0e67rhl61ublagivioqnruuemd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEmY3Dt_i_I1rW2EcseMyBrJRR_2XE-qA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-75681144-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "995849481719-6piv8q0e67rhl61ublagivioqnruuemd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "995849481719-u414579qpu6nbn93dkhupt4met765ja3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.apptown.LiveToday"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:995849481719:android:6e9ca61cc5c91b56",
+        "android_client_info": {
+          "package_name": "livetoday.online"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "995849481719-6piv8q0e67rhl61ublagivioqnruuemd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEmY3Dt_i_I1rW2EcseMyBrJRR_2XE-qA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

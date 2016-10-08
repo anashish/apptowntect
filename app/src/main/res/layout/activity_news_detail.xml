@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="tech.town.app.com.apptowntech.ui.NewsDetailActivity">
+
+    <include layout="@layout/tool_bar"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/linearLayout"
+        android:layout_height="match_parent"
+        android:fillViewport="false">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:id="@+id/icon"
+                    android:layout_height="match_parent"
+
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/youTubeIcon"
+                    android:src="@drawable/videoplay"
+                    android:visibility="invisible"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:layout_margin="10dp"
+                android:id="@+id/title"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="12dp"
+                android:textColor="@color/gray"
+                android:id="@+id/date"
+                />
+
+
+            <tech.town.app.com.apptowntech.helper.JustifiedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#3e3e3e"
+                android:textSize="16dp"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:id="@+id/desc"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <com.facebook.share.widget.LikeView
+                    android:id="@+id/like_view"
+                    android:layout_margin="10dp"
+                    android:foreground="@drawable/likefilled"
+                    android:layout_width="10dp"
+                    android:visibility="gone"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:drawableStart="@drawable/likeblank"
+                    android:id="@+id/textView_like_count"
+                    android:layout_margin="10dp"
+                    android:drawablePadding="10dp"
+                    android:gravity="center|center_vertical"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/bookmark"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/bookmarkblank"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/textsize"
+                    android:id="@+id/text_size"
+                    android:layout_margin="10dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/read_on_website"
+                    android:textColor="@color/red"
+                    android:gravity="end"
+                    android:layout_margin="5dp"
+                    android:layout_gravity="center|right"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:id="@+id/textView_read_website" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/gray"
+                ></View>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="@color/red"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:text="@string/relative"
+                android:layout_height="wrap_content" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="@color/red"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:text="टिप्पणियां"
+                android:layout_height="wrap_content" />
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical" />
+
+
+        </LinearLayout>
+
+
+
+
+
+    </ScrollView>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:backgroundTint="@color/red"
+        android:layout_margin="20dp"
+        android:clickable="true"
+        android:id="@+id/fab"
+        android:layout_above="@+id/linearLayout"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/commentbubble" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/linearLayout"
+        android:padding="10dp"
+        android:background="@color/white"
+        android:layout_alignParentEnd="true"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/facebook_social"
+            android:src="@drawable/facebookblue"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/twitterblue"
+            android:layout_weight="1"
+            android:id="@+id/twiiter_social"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/gplusred"
+            android:layout_weight="1"
+            android:id="@+id/google_social"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/whatsapp"
+            android:layout_weight="1"
+            android:id="@+id/whatsup_social"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/socialmore"
+            android:layout_weight="1"
+            android:id="@+id/more_social"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+</RelativeLayout>

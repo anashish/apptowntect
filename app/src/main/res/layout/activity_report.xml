@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="tech.town.app.com.apptowntech.ui.ReportActivity">
+    <include layout="@layout/tool_bar"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:layout_height="match_parent">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:textSize="15dp"
+                android:textColor="@color/black"
+                android:layout_margin="10dp"
+                android:id="@+id/editText_report_category"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:textSize="15dp"
+                android:textColor="@color/black"
+                android:layout_margin="10dp"
+                android:hint="@string/subject"
+                android:id="@+id/editText_report_subject"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="500"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:textSize="15dp"
+                android:hint="@string/news_explain"
+                android:maxLines="10"
+                android:minHeight="80dp"
+                android:layout_margin="10dp"
+                android:id="@+id/editText_report_comment"
+                />
+            <ImageView
+                android:layout_width="45dp"
+                android:src="@drawable/cameraupload"
+                android:id="@+id/imageView_launch_camera"
+                android:layout_height="45dp"
+                android:layout_margin="15dp"
+                android:layout_gravity="center_horizontal" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:layout_height="95dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/imageView_camera_icon"
+                    android:layout_gravity="center_horizontal" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView_close"
+                    android:padding="10dp"
+                    android:src="@drawable/close"
+                    android:layout_gravity="right"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:text="@string/save"
+                android:textColor="@color/white"
+                android:background="@color/red"
+                android:layout_margin="15dp"
+                android:id="@+id/report_submit"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

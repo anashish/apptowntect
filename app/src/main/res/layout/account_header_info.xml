@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:fb="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:background="@drawable/bg"
+    android:layout_height="175dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/container_logged_in"
+        android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:src="@drawable/com_facebook_profile_picture_blank_square"
+        android:id="@+id/image_profile"
+        android:layout_gravity="center"
+         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Ashish Mishra"
+        android:textSize="19dp"
+        android:layout_margin="10dp"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:layout_below="@+id/image_profile"
+        android:id="@+id/textView_title"
+        />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg"
+        android:gravity="center"
+        android:id="@+id/container_not_logged_in"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+
+        <FrameLayout
+            android:id="@+id/FrameLayout1"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" >
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/login_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/fb"
+                android:layout_width="match_parent"
+                android:layout_margin="15dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/facebook_header"
+                 />
+        </FrameLayout>
+
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:id="@+id/button_google"
+            android:src="@drawable/gplus_header"
+          />
+
+    </LinearLayout>
+</LinearLayout>

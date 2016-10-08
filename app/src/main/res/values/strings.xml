@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">Live Today</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="live_today"><![CDATA[<font color=#CC1F25>लाइव</font> <font color=#2F4D8D> टुडे</font>]]></string>
+    <string name="live">लाइव टुडे </string>
+    <string name="home">होम</string>
+    <string name="taza_khabre">ताज़ा खबरे</string>
+    <string name="radio">रेडियो</string>
+    <string name="video">विडियो</string>
+    <string name="facebook">फेसबुक</string>
+    <string name="google">गूगल</string>
+    <string name="blog">ब्लॉग</string>
+    <string name="home_tab">होम</string>
+    <string name="read_on_website">वेबसाइट पर पढ़ें...</string>
+
+    <string-array name="setting_info">
+
+        <item>न्यूज़ कस्टमाइज करें </item>
+        <item>मेरी पसंदीदा खबरे </item>
+        <item>रिपोर्ट करें </item>
+        <item>डाटा सेविंग </item>
+        <item>सुझाव </item>
+        <item>कैश को साफ़ करें</item>
+        <item>रेटिंग करें </item>
+        <item>एप्प शेयर करें </item>
+        <item>हमारे बारे में </item>
+        <item>नियम और शर्तें</item>
+        <item>अपडेट करें </item>
+        <item>त्याग करें </item>
+    </string-array>
+
+
+    <string-array name="report_title">
+
+        <item>भ्रस्टाचार</item>
+        <item>अपराध</item>
+        <item>सामाजिक घटना</item>
+        <item>आपकी समस्या</item>
+        <item>आँखों देखी घटना</item>
+        <item>अन्य</item>
+    </string-array>
+
+    <string name="report_title">रिपोर्ट करें </string>
+    <string name="custome_news">न्यूज़ कस्टमाइज करें </string>
+    <string name="likes_news">मेरी पसंदीदा खबरे </string>
+    <string name="notification">अधिसूचना  </string>
+    <string name="raed">पाठ संस्करण </string>
+    <string name="night_mode">नाईट मोड </string>
+    <string name="size_text">शब्दो का आकर </string>
+    <string name="suggestion">सुझाव </string>
+    <string name="save">जमा करे</string>
+    <string name="relative">सम्बंधित</string>
+
+    <string name="aboutus">हमारे बारे में</string>
+    <string name="rules">नियम और शर्ते </string>
+
+    <string name="facebook_app_id">540170596191440</string>
+    <string name="server_client_id">95849481719-6piv8q0e67rhl61ublagivioqnruuemd.apps.googleusercontent.com</string>
+    <string name="subject">शीर्षिक</string>
+    <string name="news_explain">समाचार का वर्णन करें</string>
+    <string name="easy_of_read">समाचार में आसानी</string>
+    <string name="easy_in_doing">उपयोग में आसानी</string>
+    <string name="technical_issue">तकनीकी समस्या</string>
+    <string name="help_text">आपका सुझाव हमारे लिए महुतूपूर्ण है</string>
+    <string name="twitter">ट्वीटर</string>
+    <string name="comment">टिप्पणी करे</string>
+    <string name="account_title">खाता समायोजन </string>
+    <string name="poll_title">लाइव टुडे न्यूज़ पोल</string>
+    <string name="video_tv">लाइव टीवी </string>
+    <string name="size_of_text">पाठ का साइज़</string>
+</resources>

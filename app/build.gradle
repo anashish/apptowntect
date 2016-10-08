@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'com.livetoday.livetoday'
+            keyPassword 'android'
+            storeFile file('/home/ttnd/Desktop/AppTownTech/keystore/LIVETODAYf.jks')
+            storePassword 'android'
+        }
+    }
+    compileSdkVersion 24
+    buildToolsVersion "24.0.0"
+    defaultConfig {
+        applicationId "online.livetoday.livetoday"
+        minSdkVersion 19
+        targetSdkVersion 24
+        versionCode 21
+        versionName "4.2"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:support-v13:24.0.0'
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:design:24.2.0'
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.0.1'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'com.android.support:support-v4:24.2.0'
+    compile 'com.android.support:recyclerview-v7:24.0.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.getbase:floatingactionbutton:1.10.0'
+    compile('cn.trinea.android.view.autoscrollviewpager:android-auto-scroll-view-pager:1.1.2') {
+        exclude module: 'support-v4'
+    }
+    compile 'com.facebook.android:facebook-android-sdk:4.10.1'
+    compile 'com.google.android.gms:play-services-plus:9.0.0'
+    compile 'com.google.android.gms:play-services-auth:9.0.0'
+
+}
+apply plugin: 'com.google.gms.google-services'

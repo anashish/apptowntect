@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="bottom|right"
+    android:layout_gravity="bottom|end"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+   <!-- <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/fab_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        fab:fab_addButtonColorNormal="@color/red"
+        fab:fab_addButtonColorPressed="@color/accent_dark"
+        fab:fab_addButtonPlusIconColor="@color/white"
+        fab:fab_addButtonStrokeVisible="false"
+        fab:fab_labelStyle="@style/menu_labels_style"
+        fab:fab_labelsPosition="left">-->
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_event"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/blue"
+            fab:fab_colorPressed="@color/accent_dark"
+            fab:fab_plusIconColor="@color/white"
+            fab:fab_icon="@drawable/bubbleradio"
+            fab:fab_size="mini"
+            />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/red"
+            fab:fab_colorPressed="@color/accent_dark"
+            fab:fab_plusIconColor="@color/white"
+            fab:fab_icon="@drawable/bubbletv"
+            fab:fab_size="mini"
+            />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_others"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/blue"
+            fab:fab_colorPressed="@color/accent_dark"
+            fab:fab_plusIconColor="@color/white"
+            fab:fab_icon="@drawable/reportbubble"
+            fab:fab_size="mini"
+            />
+
+   <!-- </com.getbase.floatingactionbutton.FloatingActionsMenu>-->
+
+</LinearLayout>

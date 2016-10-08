@@ -1,0 +1,115 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.HomeActivity"
+    tools:showIn="@layout/app_bar_home"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/red"
+        android:layout_height="45dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/textViewTitleOne"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content" />
+
+        <TextView
+
+            android:id="@+id/textLivePageOne"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_toRightOf="@+id/textViewTitleOne"
+            android:ellipsize="marquee"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:paddingLeft="15dip"
+            android:text="sdbdfbndsbndfs"
+            android:textColor="@color/white"
+            android:paddingRight="15dip"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:freezesText="true"></TextView>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/blue"
+        android:layout_height="45dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/textViewTitleTwo"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="5dp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/textLivePageTwo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_toRightOf="@+id/textViewTitleTwo"
+            android:ellipsize="marquee"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:paddingLeft="15dip"
+            android:textColor="@color/white"
+            android:paddingRight="15dip"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:freezesText="true"></TextView>
+    </RelativeLayout>
+
+
+    <android.support.design.widget.TabLayout
+        android:layout_width="match_parent"
+        android:id="@+id/tabLayout"
+        app:tabIndicatorColor="@color/red"
+        style="@style/MineCustomTabText"
+        app:tabMode="scrollable"
+        app:tabIndicatorHeight="5dp"
+        app:tabSelectedTextColor="@color/red"
+        app:tabTextColor="@color/black"
+        android:layout_height="wrap_content"></android.support.design.widget.TabLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:id="@+id/pager"
+            android:layout_height="match_parent">
+
+        </android.support.v4.view.ViewPager>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar2"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+</LinearLayout>
