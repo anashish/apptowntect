@@ -389,7 +389,7 @@ public class NewsDetailActivity extends BaseActivity implements DetailPageMvpVie
                     dialogBuilder
                             .setMessage(R.string.size_of_text)
                             .setCancelable(true)
-                            .setPositiveButton("OK",new DialogInterface.OnClickListener() {
+                            .setPositiveButton("Submit",new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog,int id) {
 
                                     if(mTextSize>14){
@@ -400,7 +400,7 @@ public class NewsDetailActivity extends BaseActivity implements DetailPageMvpVie
 
                                 }
                             })
-                            .setNegativeButton("No",new DialogInterface.OnClickListener() {
+                            .setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog,int id) {
                                     // if this button is clicked, just close
                                     // the dialog box and do nothing
@@ -414,7 +414,7 @@ public class NewsDetailActivity extends BaseActivity implements DetailPageMvpVie
                     View dialogView = inflater.inflate(R.layout.fragment_dialog, null);
                     dialogBuilder.setView(dialogView);
                     SeekBar progressBar=(SeekBar)dialogView.findViewById(R.id.progress_bar_size);
-                    progressBar.setProgress(50);
+                    progressBar.setProgress(10);
                     progressBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                         @Override
                         public void onProgressChanged(SeekBar seekBar, int i, boolean b) {

@@ -40,7 +40,7 @@ public class AppPref {
     }
     public String getAccessToken(Context context){
 
-        return mPref.getString("accessToke","76");
+        return mPref.getString("accessToke","");
     }
     public void saveUserIcon(String url){
 

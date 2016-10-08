@@ -26,6 +26,7 @@ import tech.town.app.com.apptowntech.R;
 import tech.town.app.com.apptowntech.model.Account;
 import tech.town.app.com.apptowntech.model.AccountHeader;
 import tech.town.app.com.apptowntech.utils.AppPref;
+import tech.town.app.com.apptowntech.utils.Logger;
 
 /**
  * Created by ${="Ashish"} on 12/9/16.
@@ -45,11 +46,12 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     int[] drawable = {
             R.drawable.customize,
             R.drawable.favorite,
-            R.drawable.notification,
-            R.drawable.textonly,
-            R.drawable.nightmode,
-            R.drawable.text_size,
             R.drawable.feedback,
+            R.drawable.textonly,
+            R.drawable.notification,
+            R.drawable.feedback,
+            R.drawable.cache,
+            R.drawable.rating,
             R.drawable.cache,
             R.drawable.rating,
             R.drawable.appshare,
@@ -168,7 +170,8 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             }
 
             VHitem.txtName.setText(currentItem.getName());
-            VHitem.iv.setImageResource(drawable[position - 1]);
+            Logger.d("Postion  "+position);
+            VHitem.iv.setImageResource(drawable[position-1]);
         }
 
 

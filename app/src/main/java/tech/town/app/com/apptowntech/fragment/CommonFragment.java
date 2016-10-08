@@ -1,9 +1,12 @@
 package tech.town.app.com.apptowntech.fragment;
 
 
+import android.annotation.TargetApi;
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -224,10 +227,31 @@ public class CommonFragment extends Fragment implements HomeCategoryList.OnAddFa
         void categoryRefresh(List<HomeCategory> homeCategoryList);
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        this.context=context;
 
+    @TargetApi(23)
+    @Override public void onAttach(Context context) {
+        //This method avoid to call super.onAttach(context) if I'm not using api 23 or more
+        //if (Build.VERSION.SDK_INT >= 23) {
+        super.onAttach(context);
+        onAttachToContext(context);
+        //}
     }
+
+    private void onAttachToContext(Context context) {
+
+        this.context=context;
+    }
+
+    /*
+     * Deprecated on API 23
+     * Use onAttachToContext instead
+     */
+    @SuppressWarnings("deprecation")
+    @Override public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        if (Build.VERSION.SDK_INT < 23) {
+            onAttachToContext(activity);
+        }
+    }
+
 }

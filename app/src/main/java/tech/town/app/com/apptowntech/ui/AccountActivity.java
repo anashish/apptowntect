@@ -114,10 +114,12 @@ public class AccountActivity extends BaseActivity implements GoogleApiClient.OnC
                     case 4:
                         break;
                     case 5:
+                        break;
+                    case 6:
                         if (testLogin()) return;
                         Navigation.launchFeedback(AccountActivity.this);
                         break;
-                    case 6:
+                    case 7:
                         try {
                             //Open the specific App Info page:
                             Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
@@ -133,24 +135,24 @@ public class AccountActivity extends BaseActivity implements GoogleApiClient.OnC
 
                         }
                         break;
-                    case 7:
+                    case 8:
                         Apputil.rateMyApp(AccountActivity.this);
                         break;
-                    case 8:
-                        Apputil.shareMyApp(AccountActivity.this);
-                        break;
                     case 9:
-                        Navigation.LaunchYouTubeVideo(AccountActivity.this,
-                                "http://apptowntechnologies.com/demo/livetoday/pages/aboutus.html",getString(R.string.aboutus));
+                        Apputil.shareMyApp(AccountActivity.this);
                         break;
                     case 10:
                         Navigation.LaunchYouTubeVideo(AccountActivity.this,
-                                "https://livetoday.online/our-privacy-policy",getString(R.string.rules));
+                                "http://apptowntechnologies.com/demo/livetoday/pages/aboutus.html",getString(R.string.aboutus));
                         break;
                     case 11:
-                        Apputil.rateMyApp(AccountActivity.this);
+                        Navigation.LaunchYouTubeVideo(AccountActivity.this,
+                                "https://livetoday.online/our-privacy-policy",getString(R.string.rules));
                         break;
                     case 12:
+                        Apputil.rateMyApp(AccountActivity.this);
+                        break;
+                    case 13:
                         logout();
                         break;
 
