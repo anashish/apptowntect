@@ -157,7 +157,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 }
             });
 
-            if(position==11){
+            if(position==12){
                 PackageInfo pInfo = null;
                 try {
                     pInfo = mContext.getPackageManager().getPackageInfo(mContext.getPackageName(), 0);
@@ -166,7 +166,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 } catch (PackageManager.NameNotFoundException e) {
                     VHitem.info.setText("");
                 }
-            }else if(position==6){
+            }else if(position==7){
                 VHitem.info.setText(""+mContext.getExternalCacheDir().length()/1000+" MB");
             }else{
                 VHitem.info.setText("");
