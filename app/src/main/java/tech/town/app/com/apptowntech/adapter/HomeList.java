@@ -38,7 +38,7 @@ public class HomeList extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         this.android = android;
         this.context = context;
         Point point = Apputil.getDisplayPoint(context);
-        mWidth = point.x;
+        mWidth = point.x-100;
     }
 
     @Override

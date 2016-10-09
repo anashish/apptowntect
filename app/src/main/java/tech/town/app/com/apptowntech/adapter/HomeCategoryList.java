@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -106,9 +107,9 @@ public class HomeCategoryList extends RecyclerView.Adapter<HomeCategoryList.View
             public void onClick(View v) {
                 Uri uri=Apputil.getLocalBitmapUri(context,viewHolder.icon);
                 if(uri==null){
-                    Apputil.share(context,android.get(i).getPTtl()+" "+android.get(i).getPIcon()+" ");
+                    Apputil.share(context,android.get(i).getPTtl()+" "+ Html.fromHtml(android.get(i).getWebsite().toString()));
                 }else{
-                    Apputil.share(context,android.get(i).getPTtl(),uri);
+                    Apputil.share(context,android.get(i).getPTtl()+" "+Html.fromHtml(android.get(i).getWebsite().toString()),uri);
                 }
 
             }

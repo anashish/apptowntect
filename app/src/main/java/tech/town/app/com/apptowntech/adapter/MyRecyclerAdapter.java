@@ -143,8 +143,6 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 VHitem.arrow.setVisibility(View.VISIBLE);
             }
 
-
-
             if(appPref.getDataSaveMode(mContext)){
                 VHitem.aSwitch.setChecked(true);
             }else{

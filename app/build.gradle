@@ -11,7 +11,7 @@ android {
         }
     }
     compileSdkVersion 24
-    buildToolsVersion "24.0.0"
+    buildToolsVersion '24.0.0'
     defaultConfig {
         applicationId "online.livetoday.livetoday"
         minSdkVersion 19
@@ -50,6 +50,5 @@ dependencies {
     compile 'com.facebook.android:facebook-android-sdk:4.10.1'
     compile 'com.google.android.gms:play-services-plus:9.0.0'
     compile 'com.google.android.gms:play-services-auth:9.0.0'
-
 }
 

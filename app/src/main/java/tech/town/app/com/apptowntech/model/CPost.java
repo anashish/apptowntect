@@ -19,6 +19,31 @@ public class CPost {
     @Expose
     private String pIcon;
 
+    @SerializedName("p_www")
+    @Expose
+    private String website;
+
+    @SerializedName("p_isbookmark")
+    @Expose
+    private int isBookMark;
+
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+
+    public int getIsBookMark() {
+        return isBookMark;
+    }
+
+    public void setIsBookMark(int isBookMark) {
+        this.isBookMark = isBookMark;
+    }
+
     private boolean isAddedToFavourite;
 
 
