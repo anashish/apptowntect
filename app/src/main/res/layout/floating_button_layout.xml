@@ -27,7 +27,7 @@
             fab:fab_colorPressed="@color/accent_dark"
             fab:fab_plusIconColor="@color/white"
             fab:fab_icon="@drawable/bubbleradio"
-            fab:fab_size="mini"
+            fab:fab_size="normal"
             />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
@@ -38,7 +38,7 @@
             fab:fab_colorPressed="@color/accent_dark"
             fab:fab_plusIconColor="@color/white"
             fab:fab_icon="@drawable/bubbletv"
-            fab:fab_size="mini"
+            fab:fab_size="normal"
             />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
@@ -49,7 +49,7 @@
             fab:fab_colorPressed="@color/accent_dark"
             fab:fab_plusIconColor="@color/white"
             fab:fab_icon="@drawable/reportbubble"
-            fab:fab_size="mini"
+            fab:fab_size="normal"
             />
 
    <!-- </com.getbase.floatingactionbutton.FloatingActionsMenu>-->

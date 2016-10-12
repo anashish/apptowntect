@@ -9,7 +9,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +18,9 @@ import java.util.List;
 import tech.town.app.com.apptowntech.R;
 import tech.town.app.com.apptowntech.adapter.HomeList;
 import tech.town.app.com.apptowntech.model.HomeCategory;
+import tech.town.app.com.apptowntech.utils.DividerItemDecoration;
 import tech.town.app.com.apptowntech.utils.ItemClickSupport;
-import tech.town.app.com.apptowntech.utils.SpacesItemDecoration;
+import tech.town.app.com.apptowntech.utils.Navigation;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -51,24 +51,16 @@ public class HomeFragment extends Fragment {
     private void initViews(View rootView){
         recyclerView = (RecyclerView)rootView.findViewById(R.id.card_recycler_view);
         recyclerView.setHasFixedSize(true);
-        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL);
-        layoutManager.setGapStrategy(
-                StaggeredGridLayoutManager.GAP_HANDLING_NONE);
-        recyclerView.setLayoutManager(layoutManager);
-        int spacingInPixels = getResources().getDimensionPixelSize(R.dimen.spacing);
-        recyclerView.addItemDecoration(new SpacesItemDecoration(spacingInPixels));
+        final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.addItemDecoration(new DividerItemDecoration(getActivity()));
 
         ItemClickSupport.addTo(recyclerView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
-                HomeCategory cPost=adapter.getItem(position);
-                try{
-                    ((OnHomeItemSelectedListener) context).onHomeItemPicked(position);
-                }catch (ClassCastException cce){
 
-                }
 
-                //Navigation.launchDescription(getActivity(),mCatID,cPost.getPId(),mCatName);
+                Navigation.launchDescription(getActivity(),homeCategoryList.get(0).getCId(),homeCategoryList.get(0).getCPost().get(position).getPId(),homeCategoryList.get(0).getCName());
             }
         });
 
@@ -86,7 +78,7 @@ public class HomeFragment extends Fragment {
             return;
         }
 
-        adapter = new HomeList(getActivity(),homeCategory);
+        adapter = new HomeList(getActivity(),homeCategory.get(0).getCPost(),homeCategory.get(0).getCId(),homeCategory.get(0).getCName());
         recyclerView.setAdapter(adapter);
 
     }

@@ -1,31 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/continer_home"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     >
 
-    <ImageView
+    <TextView
 
-        android:id="@+id/image_home_icon"
+        android:id="@+id/cat_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="14dp"
+        android:textColor="@color/black"
          />
 
     <TextView
-
-        android:id="@+id/text_home_title"
+        android:id="@+id/text_home_date"
+        android:layout_below="@+id/cat_title"
         android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:textColor="@color/black"
+        android:textSize="10dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:background="#55000000"
-        android:paddingBottom="7dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="7dp"
-        android:textColor="@color/white_overlay"
-
-        android:textSize="19dp" />
-</FrameLayout>
+         />
+</RelativeLayout>

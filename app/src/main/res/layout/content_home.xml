@@ -13,7 +13,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:background="@color/red"
-        android:layout_height="45dp">
+        android:layout_height="30dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -51,7 +51,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:background="@color/blue"
-        android:layout_height="45dp">
+        android:layout_height="30dp">
 
 
         <TextView
@@ -87,7 +87,7 @@
         android:layout_width="match_parent"
         android:id="@+id/tabLayout"
         app:tabIndicatorColor="@color/red"
-        style="@style/MineCustomTabText"
+        app:tabTextAppearance="@style/MineCustomTabText"
         app:tabMode="scrollable"
         app:tabIndicatorHeight="5dp"
         app:tabSelectedTextColor="@color/red"

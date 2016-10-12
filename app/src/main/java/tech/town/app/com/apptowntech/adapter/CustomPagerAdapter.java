@@ -57,8 +57,8 @@ public class CustomPagerAdapter extends PagerAdapter {
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         TextView  title = (TextView)itemView.findViewById(R.id.text_home_title);
         TextView  news = (TextView)itemView.findViewById(R.id.textView3);
-        news.setText("ख़ास ख़बरें");
 
+        news.setText(mCatName);
         title.setText(imageList.get(position).getPTtl());
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
