@@ -43,7 +43,7 @@ import tech.town.app.com.apptowntech.utils.Navigation;
 import tech.town.app.com.apptowntech.view.HomeMvpView;
 
 public class HomeActivity extends BaseActivity
-        implements NavigationView.OnNavigationItemSelectedListener,HomeMvpView,HomeFragment.OnHomeItemSelectedListener,CommonFragment.OnCategoryRefreshResult {
+        implements NavigationView.OnNavigationItemSelectedListener,HomeMvpView,CommonFragment.OnCategoryRefreshResult {
 
 
     private TabLayout mTabLayout;
@@ -433,10 +433,6 @@ public class HomeActivity extends BaseActivity
         return this;
     }
 
-    @Override
-    public void onHomeItemPicked(int position) {
-        mViewPager.setCurrentItem(position);
-    }
 
     @Override
     protected void onResume() {
@@ -461,7 +457,6 @@ public class HomeActivity extends BaseActivity
         }
         if(mCurrentFragment instanceof  CommonFragment) {
             CommonFragment commonFragment = (CommonFragment) mCurrentFragment;
-
             homeCategoryList.get(mPosition).getCPost().addAll(list.get(0).getCPost());
             commonFragment.notifydataChange(homeCategoryList.get(mPosition).getCPost());
 

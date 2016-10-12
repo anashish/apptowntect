@@ -111,4 +111,9 @@ public class HomeList extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return android.get(position-1);
     }
 
+    public void notifyHomeDataChange(List<CPost> list){
+        android=list;
+        notifyDataSetChanged();
+    }
+
 }
