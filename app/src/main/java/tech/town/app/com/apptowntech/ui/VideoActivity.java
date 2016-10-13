@@ -31,6 +31,7 @@ import tech.town.app.com.apptowntech.model.itemdetail.ItemSimiler;
 import tech.town.app.com.apptowntech.utils.AppPref;
 import tech.town.app.com.apptowntech.utils.ItemClickSupport;
 import tech.town.app.com.apptowntech.utils.Logger;
+import tech.town.app.com.apptowntech.utils.Navigation;
 
 public class VideoActivity extends BaseActivity {
 
@@ -209,7 +210,7 @@ public class VideoActivity extends BaseActivity {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
 
-                //Navigation.launchVideo(VideoActivity.this,itemSimiler.get(position).getPTtl(),getString(R.string.video_tv));
+                Navigation.LaunchYouTubeVideo(VideoActivity.this,itemSimiler.get(position).getWebsite(),getString(R.string.video_tv));
 
             }
         });
