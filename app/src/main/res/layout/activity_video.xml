@@ -11,6 +11,7 @@ tools:context="tech.town.app.com.apptowntech.ui.AccountActivity">
 <include layout="@layout/tool_bar"></include>
 
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -32,6 +33,14 @@ tools:context="tech.town.app.com.apptowntech.ui.AccountActivity">
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_video"
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical" />
     </RelativeLayout>
+
 
 </LinearLayout>

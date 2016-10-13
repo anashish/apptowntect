@@ -5,16 +5,31 @@ import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
+
 import tech.town.app.com.apptowntech.R;
+import tech.town.app.com.apptowntech.adapter.NewsRelativeList;
+import tech.town.app.com.apptowntech.model.CPost;
+import tech.town.app.com.apptowntech.model.HomeCategory;
+import tech.town.app.com.apptowntech.model.itemdetail.ItemSimiler;
 import tech.town.app.com.apptowntech.utils.AppPref;
+import tech.town.app.com.apptowntech.utils.ItemClickSupport;
 import tech.town.app.com.apptowntech.utils.Logger;
 
 public class VideoActivity extends BaseActivity {
@@ -23,8 +38,10 @@ public class VideoActivity extends BaseActivity {
     private ImageView exit;
     private Toolbar toolbar;
 
-
+    private boolean isTapOnVideo=false;
     private AppPref mAppPref;
+    private List<HomeCategory> mCategoryList;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +110,23 @@ public class VideoActivity extends BaseActivity {
              }
          });
 
+        myVideoView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+
+                if(isTapOnVideo){
+                    recyclerView.setVisibility(View.INVISIBLE);
+                    isTapOnVideo=false;
+                }else{
+
+                    recyclerView.setVisibility(View.VISIBLE);
+                    isTapOnVideo=true;
+                }
+                return false;
+            }
+        });
+
+
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,6 +134,24 @@ public class VideoActivity extends BaseActivity {
                 setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
             }
         });
+
+
+
+
+        String json=mAppPref.getHomeCategoryJson(this);
+        Type type = new TypeToken< List< HomeCategory >>() {}.getType();
+        mCategoryList = new Gson().fromJson(json, type);
+
+        for(int i=0;i<mCategoryList.size();i++){
+
+            if(mCategoryList.get(i).getCName().equals(getString(R.string.video_extra))) {
+
+
+                List<CPost> cPosts=mCategoryList.get(i).getCPost();
+                displayRelatedNews(cPosts);
+            }
+
+        }
 
     }
 
@@ -129,4 +181,37 @@ public class VideoActivity extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
+    private void displayRelatedNews(final List<CPost> itemSimiler) {
+        if(itemSimiler==null && itemSimiler.size()==0){
+            return;
+        }
+
+        List<ItemSimiler> item=new ArrayList<>();;
+     for(int i=0;i<itemSimiler.size();i++){
+
+         ItemSimiler similer=new ItemSimiler();
+         similer.setPTtl(itemSimiler.get(i).getPTtl());
+         similer.setPDt(itemSimiler.get(i).getPDt());
+         similer.setPIcon(itemSimiler.get(i).getPIcon());
+         similer.setPId(itemSimiler.get(i).getPId());
+         item.add(similer);
+     }
+
+        LinearLayoutManager layoutManager
+                = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerView=(RecyclerView)findViewById(R.id.recycler_view_video);
+        recyclerView.setLayoutManager(layoutManager);
+        final NewsRelativeList adapter=new NewsRelativeList(this,item);
+        recyclerView.setAdapter(adapter);
+
+        ItemClickSupport.addTo(recyclerView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
+            @Override
+            public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+
+                //Navigation.launchVideo(VideoActivity.this,itemSimiler.get(position).getPTtl(),getString(R.string.video_tv));
+
+            }
+        });
+    }
 }
