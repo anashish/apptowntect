@@ -51,15 +51,17 @@ public class VideoActivity extends BaseActivity {
         setContentView(R.layout.activity_video);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         exit=(ImageView)findViewById(R.id.exit);
-
+        recyclerView=(RecyclerView)findViewById(R.id.recycler_view_video);
         mAppPref=new AppPref(this);
 
         if(mAppPref.getBooleanOri(this)){
             toolbar.setVisibility(View.GONE);
             exit.setVisibility(View.VISIBLE);
+            recyclerView.setVisibility(View.GONE);
         }else {
             toolbar.setVisibility(View.VISIBLE);
             exit.setVisibility(View.GONE);
+            recyclerView.setVisibility(View.VISIBLE);
         }
 
         Bundle bundle = getIntent().getExtras();
@@ -115,14 +117,18 @@ public class VideoActivity extends BaseActivity {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
 
-                if(isTapOnVideo){
-                    recyclerView.setVisibility(View.INVISIBLE);
-                    isTapOnVideo=false;
-                }else{
 
-                    recyclerView.setVisibility(View.VISIBLE);
-                    isTapOnVideo=true;
+                if(mAppPref.getBooleanOri(VideoActivity.this)){
+                    if(isTapOnVideo){
+                        recyclerView.setVisibility(View.INVISIBLE);
+                        isTapOnVideo=false;
+                    }else{
+
+                        recyclerView.setVisibility(View.VISIBLE);
+                        isTapOnVideo=true;
+                    }
                 }
+
                 return false;
             }
         });
@@ -201,7 +207,7 @@ public class VideoActivity extends BaseActivity {
 
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerView=(RecyclerView)findViewById(R.id.recycler_view_video);
+
         recyclerView.setLayoutManager(layoutManager);
         final NewsRelativeList adapter=new NewsRelativeList(this,item);
         recyclerView.setAdapter(adapter);

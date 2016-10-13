@@ -36,7 +36,6 @@ tools:context="tech.town.app.com.apptowntech.ui.AccountActivity">
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view_video"
             android:layout_width="match_parent"
-            android:visibility="gone"
             android:layout_alignParentBottom="true"
             android:layout_height="wrap_content"
             android:scrollbars="vertical" />
