@@ -73,12 +73,12 @@ public class DetailPagePresenter implements Presenter<DetailPageMvpView> {
 
     }
 
-    public void addToFavourite(String id,String pid) {
+    public void addToFavourite(String id,String pid,String catId) {
        // homeMvpView.showProgressIndicator();
         if (subscription != null) subscription.unsubscribe();
         AppTown application = AppTown.get(homeMvpView.getContext());
         ApiService apiService = application.getApiService();
-        subscription = apiService.addFavourite(id,pid)
+        subscription = apiService.addFavourite(id,pid,catId)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(application.defaultSubscribeScheduler())
                 .subscribe(new Subscriber<List<Response>>() {

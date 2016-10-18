@@ -155,7 +155,7 @@ public class CommonFragment extends Fragment implements HomeCategoryList.OnAddFa
             favouritePresenter.removeFavourite(mAppPref.getAccessToken(getActivity()),pid);
         }else{
             homeCategoryList.get(postion).setAddedToFavourite(true);
-            favouritePresenter.addToFavourite(mAppPref.getAccessToken(getActivity()),pid);
+            favouritePresenter.addToFavourite(mAppPref.getAccessToken(getActivity()),pid,mCatID);
         }
         mAdapter.notifydatachange(homeCategoryList);
 

@@ -28,57 +28,57 @@ import tech.town.app.com.apptowntech.utils.Constant;
 public interface ApiService {
 
 
-    @GET("livetoday/index.php?d=API&c=Launch&m=CatInfo&platform=Android&home_ver=1&format=json")
+    @GET("index.php?d=API&c=Launch&m=CatInfo&platform=Android&home_ver=1&format=json")
     Observable<List<HomeResultInfo>> getHomeJson(@Query("user_id") String userId,@Query("home_ver") String version);
 
-    @GET("livetoday/index.php?d=API&c=Launch&m=refresh&platform=Android&format=json")
+    @GET("index.php?d=API&c=Launch&m=refresh&platform=Android&format=json")
     Observable<List<HomeResultInfo>> getCategoryList(@Query("c_id") String catId,@Query("dir") String direction,@Query("index") String index);
 
-    @GET("livetoday/index.php?d=API&c=Launch&m=AddFav&platform=Android")
-    Observable<List<Response>> addFavourite(@Query("user_id") String userId , @Query("p_id") String pid);
+    @GET("index.php?d=API&c=Launch&m=AddFav&platform=Android")
+    Observable<List<Response>> addFavourite(@Query("user_id") String userId , @Query("p_id") String pid,@Query("c_id") String catId);
 
-    @GET("livetoday/index.php?d=API&c=Launch&m=RemFav&platform=Android")
+    @GET("index.php?d=API&c=Launch&m=RemFav&platform=Android")
     Observable<List<Response>>  removeFavourite(@Query("user_id") String userId ,@Query("p_id") String pid);
 
 
-    @GET("livetoday/index.php?d=API&c=Launch&m=ListFav&platform=Android")
+    @GET("index.php?d=API&c=Launch&m=ListFav&platform=Android")
     Observable<List<FavouriteResult>> getList(@Query("user_id") String userId);
 
 
-    @GET("livetoday/index.php?d=API&c=Launch&m=ItemDetail&platform=Android")
+    @GET("index.php?d=API&c=Launch&m=ItemDetail&platform=Android")
     Observable<List<DetailPageResult>> getDetailPage(@Query("cat_id") String itemId , @Query("item_id") String catId);
 
-    @GET("livetoday/index.php?d=API&c=Launch&m=ListPoll&platform=Android&home_ver=1&format=")
+    @GET("index.php?d=API&c=Launch&m=ListPoll&platform=Android&home_ver=1&format=")
     Observable<List<PollResult>> getPollList();
 
 
-    @GET("livetoday/index.php?d=API&c=Launch&m=SubmitPoll&platform=Android")
+    @GET("index.php?d=API&c=Launch&m=SubmitPoll&platform=Android")
     Observable<List<Response>> submitPoll(@Query("user_id") String userId ,@Query("poll_id") String pollId ,
                                          @Query("poll_tag") String tag);
 
 
-    @GET("livetoday/index.php?d=API&c=Launch&m=LTLogin&platform=Android")
+    @GET("index.php?d=API&c=Launch&m=LTLogin&platform=Android")
     Observable<List<Login>> postUserDetails(@Query("name") String name ,
                                             @Query("email") String email,
                                             @Query("signup_type") String type,
                                             @Query("user_image") String imageUrl);
 
-    @GET("livetoday/index.php?d=API&c=Launch&m=insertFeedback&platform=Android")
+    @GET("index.php?d=API&c=Launch&m=insertFeedback&platform=Android")
     Observable<List<Response>> postFeedback(@Query("user_id") String userId ,@Query("f1") String name ,
                                             @Query("f2") String email,
                                             @Query("f3") String type,
                                             @Query("f_comment") String imageUrl);
 
-    @GET("livetoday/index.php?d=API&c=Launch&m=ReportNews&platform=Android")
+    @GET("index.php?d=API&c=Launch&m=ReportNews&platform=Android")
     Observable<List<Response>> postReport(@Query("user_id") String userId ,@Query("f1") String f1 ,
                                          @Query("f2") String f2,
                                          @Query("f3") String f3);
 
-    @GET("livetoday/index.php?d=API&c=Launch&m=AddComment&platform=Android")
+    @GET("index.php?d=API&c=Launch&m=AddComment&platform=Android")
     Observable<List<Response>> postComment(@Query("user_id") String userId ,@Query("p_comment") String f1 ,
                                        @Query("p_id") String f2);
 
-    @GET("livetoday/index.php?d=API&c=Launch&m=updatePref&platform=Android")
+    @GET("index.php?d=API&c=Launch&m=updatePref&platform=Android")
     Observable<List<Response>> updatePref(@Query("user_id") String userId ,@Query("u_pref") String f1);
 
 

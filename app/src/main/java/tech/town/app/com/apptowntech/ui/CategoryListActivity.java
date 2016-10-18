@@ -91,7 +91,7 @@ public class CategoryListActivity extends BaseActivity implements HomeCategoryLi
             favouritePresenter.removeFavourite(mAppPref.getAccessToken(this),pid);
         }else{
             homeCategoryList.get(postion).setAddedToFavourite(true);
-            favouritePresenter.addToFavourite(mAppPref.getAccessToken(this),pid);
+            favouritePresenter.addToFavourite(mAppPref.getAccessToken(this),pid,mCatID);
         }
         mAdapter.notifydatachange(homeCategoryList);
 

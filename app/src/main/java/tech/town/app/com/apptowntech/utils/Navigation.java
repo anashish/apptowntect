@@ -85,9 +85,9 @@ public class Navigation {
         appPref.saveOriention(false);
 
         context.startActivity(new Intent(context, VideoActivity.class).putExtra("url",url).putExtra("title",title));
-    } public static void launchComment(Context context,String json){
+    } public static void launchComment(Context context,String json,String postId){
 
-        context.startActivity(new Intent(context, CommentActivity.class).putExtra("list",json));
+        context.startActivity(new Intent(context, CommentActivity.class).putExtra("list",json).putExtra(Navigation.POST_ID,postId));
     }
 
     public static void launchCategoryList(Context context, String catId, String postId, String mCatName){

@@ -26,6 +26,7 @@ import tech.town.app.com.apptowntech.model.itemdetail.ItemComment;
 import tech.town.app.com.apptowntech.presenter.CommentPresenter;
 import tech.town.app.com.apptowntech.utils.AppPref;
 import tech.town.app.com.apptowntech.utils.Apputil;
+import tech.town.app.com.apptowntech.utils.Navigation;
 import tech.town.app.com.apptowntech.view.CommentMvpView;
 
 public class CommentActivity extends AppCompatActivity implements CommentMvpView {
@@ -33,7 +34,7 @@ public class CommentActivity extends AppCompatActivity implements CommentMvpView
     private TextView mTextViewCounter;
     private EditText mEditTextComment;
     private ProgressDialog mProgressDialog;
-
+    private Bundle bundle;
 
 
     @Override
@@ -48,7 +49,7 @@ public class CommentActivity extends AppCompatActivity implements CommentMvpView
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
 
 
-        Bundle bundle=getIntent().getExtras();
+         bundle=getIntent().getExtras();
         if(bundle!=null) {
             String json=bundle.getString("list");
             Type type = new TypeToken< List<ItemComment>>() {}.getType();
@@ -76,7 +77,8 @@ public class CommentActivity extends AppCompatActivity implements CommentMvpView
 
                 CommentPresenter commentPresenter=new CommentPresenter();
                 commentPresenter.attachView(CommentActivity.this);
-                commentPresenter.sendComment(appPref.getAccessToken(CommentActivity.this),mEditTextComment.getText().toString(),"1");
+                commentPresenter.sendComment(appPref.getAccessToken(CommentActivity.this),
+                        mEditTextComment.getText().toString(),bundle.getString(Navigation.POST_ID));
             }
         });
 

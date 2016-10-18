@@ -104,7 +104,7 @@ public class NewsDetailActivity extends BaseActivity implements DetailPageMvpVie
                  *Convert into json and save to app pref
                  */
                 String json = gson.toJson(mItemComment);
-               Navigation.launchComment(NewsDetailActivity.this,json);
+               Navigation.launchComment(NewsDetailActivity.this,json,bundle.getString(Navigation.POST_ID));
             }
         });
         ImageView facebook = (ImageView) findViewById(R.id.facebook_social);
@@ -197,7 +197,8 @@ public class NewsDetailActivity extends BaseActivity implements DetailPageMvpVie
 
                 if(mBookMarkFlag==0){
                     bookmark.setImageResource(R.drawable.bookmark_filled);
-                    homePresenter.addToFavourite(app.getAccessToken(NewsDetailActivity.this),result.getItemDetail().getPId());
+                    homePresenter.addToFavourite(app.getAccessToken(NewsDetailActivity.this),
+                            result.getItemDetail().getPId(),bundle.getString(Navigation.CAT_ID));
                     mBookMarkFlag=1;
                 }else{
 

@@ -185,8 +185,8 @@ public class ReportActivity extends BaseActivity implements PopupMenu.OnMenuItem
                     ReportPresenter reportPresenter=new ReportPresenter();
                     reportPresenter.attachView(ReportActivity.this);
                     reportPresenter.sendFeedback(appPref.
-                            getAccessToken(ReportActivity.this),mEditTextSubject.getText().toString(),
-                            mEditTextComment.getText().toString(),mEditTextTitle.getText().toString());
+                            getAccessToken(ReportActivity.this),mEditTextTitle.getText().toString(),
+                            mEditTextSubject.getText().toString(),mEditTextComment.getText().toString());
                     break;
             }
         }

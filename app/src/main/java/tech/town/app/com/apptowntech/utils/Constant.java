@@ -6,5 +6,5 @@ package tech.town.app.com.apptowntech.utils;
 public class Constant {
 
 
-    public static final String BASE_URL="http://apptowntechnologies.com/demo/";
+    public static final String BASE_URL="https://livetoday.online/mobapi/";
 }
