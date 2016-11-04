@@ -2,11 +2,17 @@ package tech.town.app.com.apptowntech.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 
 import java.util.List;
 
@@ -47,7 +53,7 @@ public class HomeList extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder viewHolder, int i) {
 
         if (viewHolder instanceof HeaderViewHolder) {
 
@@ -61,6 +67,18 @@ public class HomeList extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
             ((ViewHolder) viewHolder).title.setText(android.get(pos).getPTtl());
             ((ViewHolder) viewHolder).date.setText(android.get(pos).getPDt());
+
+            Glide.with(context)
+                    .load(android.get(pos).getPIcon())
+                    .asBitmap()
+                    .placeholder(R.drawable.placeholder)
+                    .into(new SimpleTarget<Bitmap>() {
+                        @Override
+                        public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                            ((ViewHolder) viewHolder).icon.setImageBitmap(resource);
+                        }
+                    });
+        }else{
 
 
         }
@@ -86,11 +104,14 @@ public class HomeList extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView title;
         private TextView date;
+        private ImageView icon;
+
 
         public ViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.cat_title);
             date = (TextView) view.findViewById(R.id.text_home_date);
+            icon=(ImageView)view.findViewById(R.id.icon_news);
         }
     }
 

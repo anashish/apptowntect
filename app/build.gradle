@@ -6,7 +6,7 @@ android {
         config {
             keyAlias 'com.livetoday.livetoday'
             keyPassword 'android'
-            storeFile file('/home/ttnd/Desktop/AppTownTech/keystore/LIVETODAYf.jks')
+            storeFile file('/home/ttnd/apptowntect/keystore/LIVETODAYf.jks')
             storePassword 'android'
         }
     }

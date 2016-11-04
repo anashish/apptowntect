@@ -26,7 +26,7 @@
             fab:fab_colorNormal="@color/blue"
             fab:fab_colorPressed="@color/accent_dark"
             fab:fab_plusIconColor="@color/white"
-            fab:fab_icon="@drawable/bubbleradio"
+            fab:fab_icon="@drawable/radio_one"
             fab:fab_size="normal"
             />
 
@@ -37,7 +37,7 @@
             fab:fab_colorNormal="@color/red"
             fab:fab_colorPressed="@color/accent_dark"
             fab:fab_plusIconColor="@color/white"
-            fab:fab_icon="@drawable/bubbletv"
+            fab:fab_icon="@drawable/live_tv"
             fab:fab_size="normal"
             />
 

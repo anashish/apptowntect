@@ -7,13 +7,22 @@
     android:layout_height="wrap_content"
     >
 
+n
+    <ImageView
+        android:layout_width="85dp"
+        android:id="@+id/icon_news"
+        android:scaleType="fitXY"
+        android:layout_margin="5dp"
+        android:layout_height="85dp" />
     <TextView
 
         android:id="@+id/cat_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:maxLines="2"
         android:textSize="14dp"
+        android:layout_toRightOf="@+id/icon_news"
         android:textColor="@color/black"
          />
 
@@ -24,6 +33,7 @@
         android:layout_margin="10dp"
         android:textColor="@color/black"
         android:textSize="10dp"
+        android:layout_toRightOf="@+id/icon_news"
         android:layout_height="wrap_content"
          />
 </RelativeLayout>
